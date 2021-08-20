@@ -43,7 +43,7 @@ function connect() {
 
 // Запрос выбора Bluetooth устройства
 function requestBluetoothDevice() {
-  log('Requesting bluetooth device...');
+  log('Search bluetooth device...');
 
   return navigator.bluetooth.requestDevice().
       then(device => {
