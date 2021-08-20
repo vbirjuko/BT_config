@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+<button id="connect" type="button">Connect</button>
+
+<button id="disconnect" type="button">Disconnect</button>
+
+<div id="terminal"></div>
+
+<form id="send-form">
+    <input id="input" type="text">
+    <button type="submit">Send</button>
+</form>
+
+<script src="main.js"></script>
+
+</body>
+</html>
+
+В div-контейнер будем выводить лог подключения, входящие и исходящие сообщения в следующем виде:
+
+<div id="terminal">
+    <div>Подключение к устройству...</div>
+    <div class="out">Исходящее сообщение</div>
+    <div class="in">Входящее сообщение</div>
+</div>
+
+Чтобы не гадать какое сообщение откуда, разделим их по цветам в стилях:
+
+styles.css
+
+Как видите, ничего особенного. Интерфейс готов :)
+
+Обработчики событий
+
+Дальнейшая работа будет происходить в main.js.
+
+Получим ссылки на элементы UI, повесим обработчики на клик по кнопкам подключения и отключения и на отправку формы:
+
+// Получение ссылок на элементы UI
+let connectButton = document.getElementById('connect');
+let disconnectButton = document.getElementById('disconnect');
+let terminalContainer = document.getElementById('terminal');
+let sendForm = document.getElementById('send-form');
+let inputField = document.getElementById('input');
+
+// Подключение к устройству при нажатии на кнопку Connect
+connectButton.addEventListener('click', function() {
+  connect();
+});
+
+// Отключение от устройства при нажатии на кнопку Disconnect
+disconnectButton.addEventListener('click', function() {
+  disconnect();
+});
+
+// Обработка события отправки формы
+sendForm.addEventListener('submit', function(event) {
+  event.preventDefault(); // Предотвратить отправку формы
+  send(inputField.value); // Отправить содержимое текстового поля
+  inputField.value = '';  // Обнулить текстовое поле
+  inputField.focus();     // Вернуть фокус на текстовое поле
+});
+
+// Запустить выбор Bluetooth устройства и подключиться к выбранному
+function connect() {
+  //
+}
+
+// Отключиться от подключенного устройства
+function disconnect() {
+  //
+}
+
+// Отправить данные подключенному устройству
+function send(data) {
+  //
+}
+
+Подключение к устройству
