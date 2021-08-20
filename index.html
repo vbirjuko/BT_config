@@ -18,18 +18,20 @@
 <button id="disconnect" type="button">Disconnect</button>
 
 <div id="terminal"></div>
-<br>Left:
+<table>
+<tr><td>Left:</td>
 <form id="send-form0">
-    <input id="input0" type="text"> 
-    <input id="bt_addr0" type="text">
-    <button type="submit">Save</button>
-</form>
-<br>Right:
+    <td><input id="input0" type="text"></td>
+    <td><input id="bt_addr0" type="text"></td>
+    <td><button type="submit">Save</button></td>
+</form></tr>
+<tr><td>Right:</td>
 <form id="send-form1">
-    <input id="input1" type="text"> 
-    <input id="bt_addr0" type="text">
-    <button type="submit">Save</button>
-</form>
+    <td><input id="input1" type="text"></td>
+    <td><input id="bt_addr0" type="text"></td>
+    <td><button type="submit">Save</button></td>
+</form></tr>
+</table>
 
 <script src="main.js"></script>
 <script src="companion.js" data-service-worker="sw.js"></script>
