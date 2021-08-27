@@ -1,3 +1,5 @@
+"use strict"
+
 // Получение ссылок на элементы UI
 let connectButton = document.getElementById('connect');
 let disconnectButton = document.getElementById('disconnect');
@@ -47,7 +49,7 @@ function connect() {
   return (deviceCache ? Promise.resolve(deviceCache) :
       requestBluetoothDevice()).
       then(device => connectDeviceAndCacheCharacteristic(device)).
-      then(characteristic => startNotifications(characteristic)).
+//      then(characteristic => startNotifications(characteristic)).
       catch(error => log(error));
 }
 
@@ -61,8 +63,8 @@ function requestBluetoothDevice() {
       then(device => {
         log('"' + device.name + '" bluetooth device selected');
         deviceCache = device;
-        deviceCache.addEventListener('gattserverdisconnected',
-            handleDisconnection);
+//        deviceCache.addEventListener('gattserverdisconnected',
+//            handleDisconnection);
 
         return deviceCache;
       });
@@ -92,7 +94,7 @@ function connectDeviceAndCacheCharacteristic(device) {
       then(server => {
         log('GATT server connected, getting service...');
 
-        return server.getPrimaryService(0xFFE0);
+        return server.getPrimaryService(c3766409-8778-63d8-3cbb-dcf0e0c36022);
       }).
       then(service => {
         log('Service found, getting characteristic...');
