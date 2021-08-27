@@ -2,8 +2,14 @@
 let connectButton = document.getElementById('connect');
 let disconnectButton = document.getElementById('disconnect');
 let terminalContainer = document.getElementById('terminal');
-let sendForm = document.getElementById('send-form');
-let inputField = document.getElementById('input');
+
+let send0Form = document.getElementById('send-form0');
+let input0Field = document.getElementById('input0');
+let addr0Field = document.getElementById('bt_addr0');
+
+let send1Form = document.getElementById('send-form1');
+let input1Field = document.getElementById('input1');
+let addr1Field = document.getElementById('bt_addr1');
 
 // Подключение к устройству при нажатии на кнопку Connect
 connectButton.addEventListener('click', function() {
@@ -16,11 +22,15 @@ disconnectButton.addEventListener('click', function() {
 });
 
 // Обработка события отправки формы
-sendForm.addEventListener('submit', function(event) {
+send0Form.addEventListener('submit', function(event) {
   event.preventDefault(); // Предотвратить отправку формы
-  send(inputField.value); // Отправить содержимое текстового поля
-  inputField.value = '';  // Обнулить текстовое поле
-  inputField.focus();     // Вернуть фокус на текстовое поле
+  send(input0Field.value); // Отправить содержимое текстового поля
+//  inputField.value = '';  // Обнулить текстовое поле
+//  inputField.focus();     // Вернуть фокус на текстовое поле
+});
+send1Form.addEventListener('submit', function(event) {
+  event.preventDefault(); // Предотвратить отправку формы
+  send(input1Field.value); // Отправить содержимое текстового поля
 });
 
 // Кэш объекта выбранного устройства
