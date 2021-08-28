@@ -39,7 +39,8 @@ send1Form.addEventListener('submit', function(event) {
 let deviceCache = null;
 
 // Кэш объекта характеристики
-let characteristicCache = null;
+let characteristicLeftCache = null;
+let characteristicRightCache = null;
 
 // Промежуточный буфер для входящих данных
 let readBuffer = '';
@@ -99,7 +100,8 @@ function connectDeviceAndCacheCharacteristic(device) {
       then(service => {
         log('Service found, getting characteristic...');
 
-        return service.getCharacteristic(0xFFE1);
+        return service.getCharacteristic('14996d8a-8669-0ed5-2d5e-a892bd1d6212');
+        return service.getCharacteristic('74c1bfe8-2221-c915-c9fc-dd941f10f215');
       }).
       then(characteristic => {
         log('Characteristic found');
