@@ -55,10 +55,16 @@ function connect() {
 }
 
 // Запрос выбора Bluetooth устройства
+let options = {
+  filters: [
+    {name: 'Bargraph thermometer'},
+  ]
+};
+
 function requestBluetoothDevice() {
   log('Search bluetooth device...');
 
-  return navigator.bluetooth.requestDevice(true).
+  return navigator.bluetooth.requestDevice(options).
       then(device => {
         log('"' + device.name + '" bluetooth device selected');
         deviceCache = device;
