@@ -55,10 +55,11 @@ function connect() {
 }
 
 // Запрос выбора Bluetooth устройства
-let options = {acceptAllDevices
+let options = {
 //  filters: [
 //    {name: 'Bargraph thermometer'},
 //  ]
+  acceptAllDevices: true
 };
 
 
