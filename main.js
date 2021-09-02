@@ -58,7 +58,7 @@ function connect() {
 let options = {
   filters: [
 //    {name: 'Bargraph thermometer'},
-    {AcceptAllDevices},
+    {acceptAllDevices},
   ]
 };
 
