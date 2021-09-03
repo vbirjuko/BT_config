@@ -58,7 +58,7 @@ function connect() {
 let options = {
   filters: [
     {optionalServices: 'c3766409-8778-63d8-3cbb-dcf0e0c36022'},
-  ]
+  ],
   acceptAllDevices: true
 };
 
