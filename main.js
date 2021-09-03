@@ -61,7 +61,6 @@ let options = {
   ],
   optionalServices: ['c3766409-8778-63d8-3cbb-dcf0e0c36022']
 }
-// let options = true;
 
 function requestBluetoothDevice() {
   log('Search bluetooth device...');
@@ -110,12 +109,12 @@ function connectDeviceAndCacheCharacteristic(device) {
       }).
       then(characteristic => {
         log('Characteristic Left found');
-        characteristicCache = characteristic;
+        characteristicLeftCache = characteristic;
         return service.getCharacteristic('74c1bfe8-2221-c915-c9fc-dd941f10f215');
       }).
       then(characteristic => {
         log('Characteristic Right found');
-        characteristicCache = characteristic;
+        characteristicRightCache = characteristic;
 
         return characteristicRightCache;
       });
