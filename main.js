@@ -111,15 +111,12 @@ function connectDeviceAndCacheCharacteristic(device) {
         return service.getCharacteristic('14996d8a-8669-0ed5-2d5e-a892bd1d6212');
       }).
       then(characteristic => {
-        log('Characteristic found');
+        log('Characteristic Left found');
         characteristicCache = characteristic;
-
-        return characteristicLeftCache;
-      });
-          return service.getCharacteristic('74c1bfe8-2221-c915-c9fc-dd941f10f215');
+        return service.getCharacteristic('74c1bfe8-2221-c915-c9fc-dd941f10f215');
       }).
       then(characteristic => {
-        log('Characteristic found');
+        log('Characteristic Right found');
         characteristicCache = characteristic;
 
         return characteristicRightCache;
