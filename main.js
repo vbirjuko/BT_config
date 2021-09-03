@@ -57,13 +57,6 @@ function connect() {
 // Запрос выбора Bluetooth устройства
 let options = {
   filters: [
-    {optionalServices: ['c3766409-8778-63d8-3cbb-dcf0e0c36022']},
-  ],
-//  acceptAllDevices: true
-};
-
-let options = {
-  filters: [
     {name: 'Bargraph thermometer'}
   ],
   optionalServices: ['c3766409-8778-63d8-3cbb-dcf0e0c36022']
