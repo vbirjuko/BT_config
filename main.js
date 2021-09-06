@@ -97,29 +97,29 @@ function connectDeviceAndCacheCharacteristic(device) {
   log('Connecting to GATT server...');
 
   return device.gatt.connect().
-      then(server => {
-        log('GATT server connected, getting service...');
+          then(server => {
+                          log('GATT server connected, getting service...');
 
-        return server.getPrimaryService('c3766409-8778-63d8-3cbb-dcf0e0c36022');
-      }).
-      then(service => {
-        log('Service found, getting characteristic...');
+                          return server.getPrimaryService('c3766409-8778-63d8-3cbb-dcf0e0c36022');
+          }). 
+          then(service => {
+                           log('Service found, getting characteristic...');
 
-        return service.getCharacteristic('14996d8a-8669-0ed5-2d5e-a892bd1d6212');
-      }).
-      then(characteristic => {
-        log('Characteristic Left found');
-        characteristicLeftCache = characteristic;
-      }).
-      then(service => {
-        return service.getCharacteristic('74c1bfe8-2221-c915-c9fc-dd941f10f215');
-      }).
-      then(characteristic => {
-        log('Characteristic Right found');
-        characteristicRightCache = characteristic;
+                           return service.getCharacteristic('14996d8a-8669-0ed5-2d5e-a892bd1d6212');
+           }). 
+           then(characteristic => {
+                           log('Characteristic Left found');
+                           characteristicLeftCache = characteristic;
+           }).
+           then(service => {
+                           return service.getCharacteristic('74c1bfe8-2221-c915-c9fc-dd941f10f215');
+           }). 
+           then(characteristic => {
+                           log('Characteristic Right found');
+                           characteristicRightCache = characteristic;
 
-        return characteristicRightCache;
-      });
+                           return characteristicRightCache;
+           });
 }
 
 // Включение получения уведомлений об изменении характеристики
